@@ -3,7 +3,7 @@
 //
 //  Created by 冲浪小子（🏄） on 2017/7/3.
 //  Copyright © 2017年 小码哥. All rights reserved.
-//用到原理：NSScanner 转换成int类型 然后传入 r g b 到[UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]方法
+//用到原理：NSScanner 转换成int类型，然后传入 r g b 到[UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]方法
 
 #import "UIColor+Extension.h"
 
