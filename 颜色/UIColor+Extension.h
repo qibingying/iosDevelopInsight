@@ -3,7 +3,7 @@
 //
 //  Created by 冲浪小子（🏄） on 2017/7/3.
 //  Copyright © 2017年 小码哥. All rights reserved.
-//g这个是颜色的分类 方便设置颜色
+//g这个是颜色的分类，方便设置颜色
 
 #import <UIKit/UIKit.h>
 
