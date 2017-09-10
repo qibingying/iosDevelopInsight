@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#smsdktest
+{
+margin-top: 80px;
+}
+/*手机号*/
+#smsdktest #phone
+{
+    border: 1px solid #000;
+    width: 375px;
+    height: 40px;
+}
+#smsdktest #phoneNumble
+{
+    display: inline-block;
+    border:1px black;
+    line-height: 40px;
+    margin-left: 20px;
+}
+#smsdktest #phoneInput
+{
+    display: inline-block;
+}
+#smsdktest #code
+{
+    border: 1px solid #000;
+    width: 375px;
+    height: 40px;
+    margin-top: 20px;
+}
+#code #codeText
+{
+    display: inline-block;
+    line-height: 40px;
+    margin-left: 20px;
+}
+#code #codeInput
+{
+    display: inline-block;
+}
+/*button 定位*/
+#button
+{
+    position: relative;
+}
+#button #getCode
+{
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    margin: 20px 50px;
+}
+#button #commitCode
+{
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    top: 20px;
+    right: 50px;
+}
+/*相机*/
+#takePicture
+{
+    position:relative;
+}
+#takePicture #getimage
+{
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    top: 70px;
+    left: 50px;
+}
+#bottomImage
+{
+margin-top: 200px;
+margin-left: 50px;
+}
+
+
+
+

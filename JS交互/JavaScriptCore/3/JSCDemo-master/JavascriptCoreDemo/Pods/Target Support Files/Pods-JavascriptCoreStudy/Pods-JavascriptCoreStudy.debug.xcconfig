@@ -1,0 +1,8 @@
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/MOBFoundation_IDFA" "${PODS_ROOT}/SMSSDK/SMS_SDK"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/MOBFoundation_IDFA" "${PODS_ROOT}/Headers/Public/SMSSDK"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/MOBFoundation_IDFA" -isystem "${PODS_ROOT}/Headers/Public/SMSSDK"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"icucore" -l"stdc++" -l"z" -framework "AddressBook" -framework "AddressBookUI" -framework "JavaScriptCore" -framework "MOBFoundation" -framework "MOBFoundationEx" -framework "MessageUI" -framework "SMS_SDK"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_ROOT = ${SRCROOT}/Pods

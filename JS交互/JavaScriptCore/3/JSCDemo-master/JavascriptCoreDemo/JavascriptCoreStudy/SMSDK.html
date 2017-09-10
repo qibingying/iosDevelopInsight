@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SMSDK测试</title>
+    <link rel="stylesheet" href="./SMSDK.css">
+
+        <script>
+            function initSDK(hello)
+            {
+                return $smsdk.initSDK(hello);
+            }
+            function getCodeCallBack(message)
+            {
+                $smsdk.getCodeCallBack(message);
+            }
+        function commitCodeCallBack(message)
+        {
+            $smsdk.commitCodeCallBack(message);
+        }
+        
+        
+            </script>
+        
+</head>
+<body>
+
+<div id="smsdktest">
+
+    <div id="phone">
+        <p id="phoneNumble">手机号:</p>
+        <input id="phoneInput" type="text" placeholder="请输入手机号">
+    </div>
+
+    <div id="code">
+        <p id="codeText">验证码:</p>
+        <input id="codeInput" type="text" placeholder="请输入验证码">
+    </div>
+
+    <div id="button">
+        <button id="getCode" onclick="getCode($smsdk.getCode())">获取手机号</button>
+        <button id="commitCode" onclick="commitCode($smsdk.commitCode())">提交验证码</button>
+    </div>
+    
+    <div id="callBack">
+    </div>
+    
+    <div id="takePicture">
+        <button id="getimage" onclick="objc.takePicture()">获取相册</button>
+    </div>
+<!-- 协议获取相册   -->
+<div id = "bottomImage">
+
+<div>
+    <h4> JS页面获取iOS系统图片</h4>
+</div>
+<div>
+    <input type= "button" width="50%" height="5%" id = "Button" value = "打开相机获取图片" onclick = "getIOSImage()"></button>
+</div>
+<div>
+    <img src = "shareImg.png" id ="changeImage" width="30%" height="30%"  onclick ="getIOSImage()">
+</div>
+<span id="iosParame" style="width: 200px;height: 50%;color: blanchedalmond;font-size: 15px">等参数</span>
+<!--测试-->
+<div>
+    <input type= "button" width="50%" height="5%" id = "Button" value = "需要测试" onclick = "objc.takePicture()"></button>
+</div>
+
+</div>
+
+
+
+<script>
+    var  getIOSImage = function()
+    {
+        var  parameter  = {'title':'JS调OC','describe':'这里就是JS传给OC的参数'};
+        //在下面这里实现js调用系统原生api
+        window.iosDelegate.getImage(parameter); //使用 JavaScriptCore不需要转换json字符串,直接传递判断类型
+    }
+//这里是iOS调用js的方法
+//函数
+   function setImageWithPath(arguments)
+   {
+        document.getElementById('changeImage').src  = arguments[ 'imagePath'];
+        document.getElementById('iosParame').innerHTML  = arguments['iosContent'];
+    }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="./SMSDK.js"></script>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="./SMSDK.js"></script>
+
+</body>
+</html>
