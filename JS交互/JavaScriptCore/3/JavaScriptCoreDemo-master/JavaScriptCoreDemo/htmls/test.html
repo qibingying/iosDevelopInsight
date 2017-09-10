@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>消息jsObj方法调用示例</title>
+    <style type="text/css">
+      html,body{width:100%; margin:0px; padding:0px;}
+      #msg{ width: 95%; height: 500px; background-color: #CCC; /**font-size: 24px;*/ border: 4px #F88 solid; margin: 0 auto;}
+      .btn { padding: 16px; background-color: #F66; border: 3px #6FF solid; }
+      .btn:active { background-color: #0F0; border: 3px #00F solid; }
+
+    </style>
+    <script type="text/javascript">
+
+
+      function callOCMethod(arg1){
+        jsObj.myJSInterfaceMethodWithArg1(arg1);
+      }
+    
+      function callOCMethodWithArgs(arg1, arg2){
+        jsObj.myJSInterfaceMethodWithArgs(arg1, arg2);
+      }
+    
+      function callOCMethodWithReturn(arg){
+        var result = jsObj.myJSInterfaceMethod(arg);
+        log('返回值：' + result);
+      }
+    
+      function callOCInitMethod(arg){
+        log('开始调用');
+        jsObj.initMethodWithArg(arg);
+        log('结束调用');
+      }
+
+      function clearMsg(){
+        var div = document.getElementById("msg");
+        div.innerHTML = '';
+      }
+      
+      function log(msg){
+        var div = document.getElementById("msg");
+        div.innerHTML += msg + '<br/>';
+      }
+
+    </script>
+  </head>
+  <body>
+    <p>js与OC交互示例</p>
+    <input type='button' value='Hello'                 class='btn' onclick='log("Hello! js!")'/>
+    <input type='button' value='消除'                 class='btn' onclick='clearMsg()'/>
+    <input type='button' value='调用OC方法'             class='btn' onclick='callOCMethod("Mike!")'/>
+    <input type='button' value='调用OC的多参数方法'          class='btn' onclick='callOCMethodWithArgs("Mike!", "Rose!")'/>
+    <input type='button' value='返回值方法'          class='btn' onclick='callOCMethodWithReturn(235)'/>
+    <input type='button' value='调用init开头的方法'          class='btn' onclick='callOCInitMethod("Mike!")'/>
+    <div id = "msg">
+    </div>
+  </body>
+</html>
