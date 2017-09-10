@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0058)http://120.209.204.224:8085/eip?eip_serv_id=app.h5_yangtao -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>H5分享测试</title>
+<meta http-equiv="Content-Type" content="text/html">
+<script type="text/javascript" src="./H5分享测试_files/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="./H5分享测试_files/mui.min.js"></script>
+<script type="text/javascript" src="./H5分享测试_files/vue.min.js"></script>
+<script type="text/javascript" src="./H5分享测试_files/md5.js"></script>
+<script type="text/javascript" src="./H5分享测试_files/common.js"></script>
+<script type="text/javascript" src="./H5分享测试_files/getToken.js"></script>
+<script type="text/javascript" src="./H5分享测试_files/jquery.cookie.js"></script>
+<style type="text/css">
+.share{ float:left; width:100%; text-align:center; }
+.btn-tell{ width:120px; height:38px; background:url(http://ah.10086.cn/upfile/h5/images/sign/btn_tell.png) no-repeat; background-size:120px; color:#fff; border:none; font-size:16px; }
+.inputBtn{font-size: 18px;font-family:Microsoft-YaHei; height: 100px; line-height:35px; background-color: #0085CF; border-radius: 8px; width: 100%; border: none; outline: none;color:white;margin-top: 10%;}
+.inputBtn2{font-size: 18px;font-family:Microsoft-YaHei; height: 100px; line-height:35px; background-color: #0085CF; border-radius: 8px; width: 100%; border: none; outline: none;color:white;margin-top: 15%;}
+.inputBtn3{font-size: 18px;font-family:Microsoft-YaHei; height: 100px; line-height:35px; background-color: #0085CF; border-radius: 8px; width: 100%; border: none; outline: none;color:white;margin-top: 15%;}
+</style>
+</head>
+<body>
+	<div class="share">
+		<input class="inputBtn" type="button" onclick="goShare()" value="分享(二维码)">
+	</div>
+	<div class="share">
+		<input class="inputBtn2" type="button" onclick="goShare2()" value="分享(无二维码)">
+	</div>
+	<div class="share">
+		<input class="inputBtn3" type="button" onclick="goShare3()" value="分享(回调)">
+	</div>
+
+<script type="text/javascript">
+var ZTJSToObjectC;
+var jsonStr = "";
+var deviceType = getDeviceType();
+var cookies = getCookie("WT_FPC");
+function goShare(){
+	if (deviceType == "android") {
+		var paramJson = {'cookies':cookies,'ssoFlag':'1','friendContent':"呵呵哒@@@@",'friendImg':"upload/share/1392879020480.png",'friendLink':"http://www.baidu.com",'weiContent':"呵呵哒@@@@",'weiImg':"upload/share/1392879020480.png",'weiLink':"http://www.baidu.com",'sinaContent':"呵呵daadad",'sinaImg':"upload/share/1392879020480.png",'sinaLink':"http://www.baidu.com",'shareTitle':'','shareUrl':"http://www.baidu.com",
+				'msgContent':"呵呵daadad",'qqShareTitle':"呵呵daadad",'qqImg':"upload/share/1392879020480.png",'qqLink':"http://www.baidu.com",'qzoneShareTitle':"呵呵daadad",'qzoneImg':"upload/share/1392879020480.png",
+				'qzoneLink':"http://www.baidu.com",'qrCodeIsShow':'1','qrCodeLink':'http://www.baidu.com','qrCodeDescript':'识别二维码','qrCodeTitle':'识别二维码','qrCodeBottomImageUrl':'https://m.baidu.com/static/index/plus/plus_logo.png'};
+		jsonstr = JSON.stringify(paramJson);
+		window.handler.htmlJumpToApp("S_SHARE", jsonstr);
+	}else{
+		jsonstr = "{\"friendContent\":\"" + "呵呵哒@@@@" + "\",\"friendImg\":\"" + "upload/share/1392879020480.png" + "\",\"friendLink\":\"" + "http://www.baidu.com" + "\",\"weiContent\":\"" + "呵呵哒@@@@" + "\",\"weiImg\":\"" + "upload/share/1392879020480.png" + "\",\"weiLink\":\"" + "http://www.baidu.com" + "\",\"sinaContent\":\"" + "呵呵daadad" + "\",\"sinaImg\":\"" + "upload/share/1392879020480.png" + "\",\"sinaLink\":\"\",\"shareTitle\":\"" + "" + "\",\"shareUrl\":\"" + "http://www.baidu.com" + "\",\"msgContent\":\"" + "呵呵daadad" + "\",\"qrCodeIsShow\":\"" + "1" + "\",\"qrCodeLink\":\"" + "http://www.baidu.com" + "\",\"qrCodeDescript\":\"" + "识别二维码" + "\",\"qrCodeTitle\":\"" + "识别二维码" + "\",\"qrCodeBottomImageUrl\":\"" + "https://m.baidu.com/static/index/plus/plus_logo.png" + "\"}";
+		ZTJSToObjectC.shareWithParameterCookie(jsonstr, cookies);
+	}
+}
+function goShare2(){
+	if (deviceType == "android") {
+		var paramJson = {'cookies':cookies,'ssoFlag':'1','friendContent':"呵呵哒@@@@",'friendImg':"upload/share/1392879020480.png",'friendLink':"http://www.baidu.com",'weiContent':"呵呵哒@@@@",'weiImg':"upload/share/1392879020480.png",'weiLink':"http://www.baidu.com",'sinaContent':"呵呵daadad",'sinaImg':"upload/share/1392879020480.png",'sinaLink':"http://www.baidu.com",'shareTitle':'','shareUrl':"http://www.baidu.com",
+				'msgContent':"呵呵daadad",'qqShareTitle':"呵呵daadad",'qqImg':"upload/share/1392879020480.png",'qqLink':"http://www.baidu.com",'qzoneShareTitle':"呵呵daadad",'qzoneImg':"upload/share/1392879020480.png",
+				'qzoneLink':"http://www.baidu.com",'qrCodeIsShow':'0','qrCodeLink':'http://www.baidu.com','qrCodeDescript':'识别二维码','qrCodeTitle':'识别二维码','qrCodeBottomImageUrl':'https://m.baidu.com/static/index/plus/plus_logo.png'};
+		jsonstr = JSON.stringify(paramJson);
+		window.handler.htmlJumpToApp("S_SHARE", jsonstr);
+	}else{
+		jsonstr = "{\"friendContent\":\"" + "呵呵哒@@@@" + "\",\"friendImg\":\"" + "upload/share/1392879020480.png" + "\",\"friendLink\":\"" + "http://www.baidu.com" + "\",\"weiContent\":\"" + "呵呵哒@@@@" + "\",\"weiImg\":\"" + "upload/share/1392879020480.png" + "\",\"weiLink\":\"" + "http://www.baidu.com" + "\",\"sinaContent\":\"" + "呵呵daadad" + "\",\"sinaImg\":\"" + "upload/share/1392879020480.png" + "\",\"sinaLink\":\"\",\"shareTitle\":\"" + "" + "\",\"shareUrl\":\"" + "http://www.baidu.com" + "\",\"msgContent\":\"" + "呵呵daadad" + "\",\"qrCodeIsShow\":\"" + "0" + "\",\"qrCodeLink\":\"" + "http://www.baidu.com" + "\",\"qrCodeDescript\":\"" + "识别二维码" + "\",\"qrCodeTitle\":\"" + "识别二维码" + "\",\"qrCodeBottomImageUrl\":\"" + "https://m.baidu.com/static/index/plus/plus_logo.png" + "\"}";
+		ZTJSToObjectC.shareWithParameterCookie(jsonstr, cookies);
+	}
+}
+function goShare3(){
+	if (deviceType == "android") {
+		var paramJson = {'cookies':cookies,'ssoFlag':'1','friendContent':"呵呵哒@@@@",'friendImg':"upload/share/1392879020480.png",'friendLink':"http://www.baidu.com",'weiContent':"呵呵哒@@@@",'weiImg':"upload/share/1392879020480.png",'weiLink':"http://www.baidu.com",'sinaContent':"呵呵daadad",'sinaImg':"upload/share/1392879020480.png",'sinaLink':"http://www.baidu.com",'shareTitle':'','shareUrl':"http://www.baidu.com",
+				'msgContent':"呵呵daadad",'qqShareTitle':"呵呵daadad",'qqImg':"upload/share/1392879020480.png",'qqLink':"http://www.baidu.com",'qzoneShareTitle':"呵呵daadad",'qzoneImg':"upload/share/1392879020480.png",
+				'qzoneLink':"http://www.baidu.com",'qrCodeIsShow':'1','qrCodeLink':'http://www.baidu.com','qrCodeDescript':'识别二维码','qrCodeTitle':'识别二维码','qrCodeBottomImageUrl':'https://m.baidu.com/static/index/plus/plus_logo.png'};
+		jsonstr = JSON.stringify(paramJson);
+		window.handler.shareForResult(jsonstr, 'showalert');
+	}else{
+		jsonstr = "{\"friendContent\":\"" + "呵呵哒@@@@" + "\",\"friendImg\":\"" + "upload/share/1392879020480.png" + "\",\"friendLink\":\"" + "http://www.baidu.com" + "\",\"weiContent\":\"" + "呵呵哒@@@@" + "\",\"weiImg\":\"" + "upload/share/1392879020480.png" + "\",\"weiLink\":\"" + "http://www.baidu.com" + "\",\"sinaContent\":\"" + "呵呵daadad" + "\",\"sinaImg\":\"" + "upload/share/1392879020480.png" + "\",\"sinaLink\":\"\",\"shareTitle\":\"" + "" + "\",\"shareUrl\":\"" + "http://www.baidu.com" + "\",\"msgContent\":\"" + "呵呵daadad" + "\",\"qrCodeIsShow\":\"" + "1" + "\",\"qrCodeLink\":\"" + "http://www.baidu.com" + "\",\"qrCodeDescript\":\"" + "识别二维码" + "\",\"qrCodeTitle\":\"" + "识别二维码" + "\",\"qrCodeBottomImageUrl\":\"" + "https://m.baidu.com/static/index/plus/plus_logo.png" + "\"}";
+		ZTJSToObjectC.shareWithParameterCookieSussessFaile(jsonstr, cookies, 'alert1()', 'alert2()');
+	}
+}
+
+
+function alert1(){
+	alert("成功！！！！");
+}
+function alert2(){
+	alert("失败！！！！");
+}
+function showalert(msg){
+	msg = JSON.parse(msg);
+	var res = msg.RESULT;
+	if(res == "ok"){
+		alert("成功！！！！");
+	}else{
+		alert("失败！！！！");
+	}
+	
+}
+
+//判断客户端是android还是ios
+function getDeviceType() {
+	var result = "";
+	var u = navigator.userAgent;
+	var myOS = "android";
+	if (u.indexOf('iPhone') > -1) {// 苹果手机
+		myOS = "ios";
+	}
+	return myOS;
+}
+
+//获取cookie信息
+function getCookie(name) {
+	var arr = document.cookie.split("; ");
+	for (var i = 0; i < arr.length; i++) {
+		var arr2 = arr[i].split("=");
+		if (arr2[0] == name) {
+			return arr2[1];
+		}
+	}
+	return "";
+} 
+	
+</script>
+</body></html>
